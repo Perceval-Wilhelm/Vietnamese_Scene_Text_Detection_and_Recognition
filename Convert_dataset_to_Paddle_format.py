@@ -5,11 +5,11 @@ import pandas as pd
 import json
 import glob
 
-root_path = glob.glob('D:/Vietnamese_Scene_Text_Detection_and_Recognition/vietnamese/labels/*')
+root_path = glob.glob('/content/gdrive/MyDrive/VietnamesePaddleOCR/train/vietnamese/labels/*')
 
-train_label = open("train_label.txt", "w", encoding="utf-8")
-test_label = open("test_label.txt", "w", encoding="utf-8")
-unseen_label = open("useen_label.txt", "w", encoding="utf-8")
+train_label = open("/content/gdrive/MyDrive/VietnamesePaddleOCR/train/vietnamese/train_label.txt", "w", encoding="utf-8")
+test_label = open("/content/gdrive/MyDrive/VietnamesePaddleOCR/train/vietnamese/test_label.txt", "w", encoding="utf-8")
+unseen_label = open("/content/gdrive/MyDrive/VietnamesePaddleOCR/train/vietnamese/useen_label.txt", "w", encoding="utf-8")
 
 for file in root_path:
     with open(file, encoding="utf-8") as f:
