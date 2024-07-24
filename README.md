@@ -26,7 +26,7 @@ python3 tools/train.py -c ./configs/det/SAST.yml
 ### Train Recognition Model
 To train the text recognition model, use the following command:
 ```bash
-python3 tools/train.py -c ./configs/rec/SRN.yml
+python3 tools/train.py -c ./configs/rec/SVTR.yml
 ```
 
 ## Evaluation
@@ -39,7 +39,7 @@ python3 tools/eval.py -c ./configs/det/SAST.yml
 ### Evaluate Recognition Model
 To evaluate the text recognition model, use the following command:
 ```bash
-python3 tools/eval.py -c ./configs/rec/SRN.yml
+python3 tools/eval.py -c ./configs/rec/SVTR.yml
 ```
 
 ## Prediction
@@ -52,14 +52,14 @@ python3 tools/infer_det.py -c ./configs/det/SAST.yml -o Global.infer_img=#path_t
 ### Predict Recognition
 To predict using the text recognition model, use the following command:
 ```bash
-python3 tools/infer_rec.py -c ./configs/rec/SRN.yml -o Global.infer_img=im0001_1.jpg
+python3 tools/infer_rec.py -c ./configs/rec/SVTR.yml -o Global.infer_img=im0001_1.jpg
 ```
 
 ## Convert to Inference Model
 To convert the trained models to inference models, use the following commands:
 ```bash
 python3 tools/export_model.py -c ./configs/det/SAST.yml  
-python3 tools/export_model.py -c ./configs/rec/SRN.yml
+python3 tools/export_model.py -c ./configs/rec/SVTR.yml
 ```
 
 ## Detection and Recognition Concatenation
@@ -70,7 +70,7 @@ python3 tools/infer/predict_system.py \
     --det_algorithm="SAST" \
     --det_model_dir="./inference/SAST" \
     --rec_algorithm="SRN" \
-    --rec_model_dir="./inference/SRN/" \
+    --rec_model_dir="./inference/SVTR/" \
     --rec_image_shape="1, 64, 256" \
     --image_dir=#path_img \
     --rec_char_type="ch" \
